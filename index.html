@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <link rel="stylesheet" type="text/css" href="./owl.carousel.css">
+      <script src="./owl.carousel.js"></script>
+      <script src="./vue.js"></script>
+
+
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Mobil</title>
+
+      <script type = "text/javascript">
+
+          window.addEventListener("load", function(event) {
+              $('.owl-carousel').owlCarousel({
+                  loop:true,
+                  margin:10,
+                  nav:false,
+                  items:1
+              });
+
+              Vue.component('menu-modal', {
+                  template: '#menu-modal',
+              })
+
+              Vue.component('search-element', {
+                  template: '#search-element',
+              })
+
+              Vue.component('vue-accordion', {
+                  data: function () {
+                      return {
+                          rows: {
+                              q1: {
+                                  term: 'BB Kremler',
+                                  open: false
+                              },
+                              q2: {
+                                  term: 'Cilt Bakımı',
+                                  details: {
+                                      k1:{
+                                        name:'super Aqua'
+                                      },
+                                      k2:{
+                                          name:'Time Revulation'
+                                      }
+                                  },
+                                  open: false
+                              },
+                              q3: {
+                                  term: 'Vücut Bakımı',
+                                  details: {
+                                      k1:{
+                                          name:'super Aqua'
+                                      },
+                                      k2:{
+                                          name:'Time Revulation'
+                                      }
+                                  },
+                                  open: false
+                              }
+                              ,
+                              q4: {
+                                  term: 'BB Kremler',
+                                  open: false
+                              },
+                              q5: {
+                                  term: 'Cilt Bakımı',
+                                  details: {
+                                      k1:{
+                                          name:'super Aqua'
+                                      },
+                                      k2:{
+                                          name:'Time Revulation'
+                                      }
+                                  },
+                                  open: false
+                              },
+                              q6: {
+                                  term: 'Vücut Bakımı',
+                                  details: {
+                                      k1:{
+                                          name:'super Aqua'
+                                      },
+                                      k2:{
+                                          name:'Time Revulation'
+                                      }
+                                  },
+                                  open: false
+                              }
+                          }
+                      }
+                  },template: '#vue-accordion',
+              })
+
+              var vm = new Vue({
+                  el: '#app',
+                  data: {
+                      showMenu: 1
+                  },
+                  methods : {
+                      displayMenu : function() {
+                          let element = this.$refs.modal.$el
+                          $(element).modal('show')
+                      },
+                      displaySearch : function () {
+                          let element = this.$refs.modal.$el
+                      }
+                  },
+              });
+
+
+
+          });
+          
+          
+      </script>
+
+      <style>
+          @media only screen and (max-width: 768px) {
+              .nav-link{font-size: 40px}
+          }
+          @media only screen and (max-width: 992px) {
+
+          }@media only screen and (max-width: 1200px) {
+
+          }
+          .nav-link{font-size: 50px}
+
+
+          .nav
+          {
+              width: 100%;
+              height: 102px;
+              display: -moz-inline-box;
+              display: -webkit-inline-box;
+              overflow-x: auto;
+
+          }
+          .nav li
+          {
+              width: 300px;
+              flex-shrink: 0;
+              height: 100px;
+
+          }
+          .nav-link{
+              color: #464646;
+          }
+
+          .modal-full {
+              min-width: 100%;
+              margin: 0;
+              min-height: 100%;
+              height: 100%;
+          }
+          .modal-content-full {
+              height: 100%;
+              min-height: 100%;
+              border-radius: 0;
+          }
+
+      </style>
+
+      <style>
+          .mh-1{
+          background: rgb(102, 102, 102);
+          }
+          .mt-1{
+              color: #fff;
+              font-size: 50px;
+
+          }
+          .close{
+              font-size: 50px;
+              opacity: 1;
+          }
+          .c-white{
+              color: #ffffff;
+          }
+          .mfont{
+              font-size: 30px;
+          }
+      </style>
+
+  </head>
+  <body>
+
+
+  <div id="app" class="container-fluid">
+
+          <div class="row mt-5" id="menuDetails" style="border-bottom: 1px solid #464646;height: 150px">
+              <div class="col-2 col-sm-2 text-right ml-auto" v-on:click = "displayMenu" ><i class="fas fa-bars fa-5x"></i><menu-modal ref="modal"></menu-modal></div>
+              <div class="col-8 col-sm-8 text-center" ><img style="height: 90px" src="./logo.png"></div>
+              <div class="col-2 col-sm-2 text-left mr-auto" v-on:click = "displaySearch"><i class="fas fa-search fa-5x"></i></div>
+          </div>
+
+      <div class="row mt-3">
+            <search-element ref="search_elem"></search-element>
+
+          <div class="col-12 col-sm-12">
+              <ul class="nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">BB Kremler</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Cilt Bakımı</a>
+                  </li>
+                  <li class="nav-item" style="width: 350px;">
+                      <a class="nav-link"  href="#">Vicud Bakımı</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Saç Bakımı</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Makyaj</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Parfümler</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Aksesuarlar</a>
+                  </li>
+                  <li class="nav-item" style="width: 480px;">
+                      <a class="nav-link"  href="#">Güneş Koruyucuları</a>
+                  </li>
+              </ul>
+
+          </div>
+
+      </div>
+
+      <div class="row">
+          <div class="col-12 col-sm-12">
+              <div class="owl-carousel owl-theme">
+                  <div class="item"><img src="./img/1.jpg"></div>
+                  <div class="item"><img src="./img/2.jpg"></div>
+                  <div class="item"><img src="./img/3.jpg"></div>
+                  <div class="item"><img src="./img/4.jpg"></div>
+                  <div class="item"><img src="./img/5.jpg"></div>
+                  <div class="item"><img src="./img/6.jpg"></div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-12 col-sm-12 text-center">
+              <h1>Yeni Ürünler&Çok Satanlar</h1>
+          </div>
+          <div class="col-6 col-sm-6">
+              <img style="width: 100%" src="./img/n1.jpg">
+              <h2>Black Friday Kampanya</h2>
+          </div>
+          <div class="col-6 col-sm-6">
+              <img style="width: 100%" src="./img/n2.jpg">
+              <h2>Yeni trend rengi</h2>
+          </div>
+
+          <div class="col-6 col-sm-6">
+              <img style="width: 100%" src="./img/n3.jpg">
+              <h2>hassas cilt</h2>
+          </div>
+
+          <div class="col-6 col-sm-6">
+              <img style="width: 100%" src="./img/n4.jpg">
+              <h2>kızdırma kapağı</h2>
+          </div>
+
+      </div>
+
+      <div class="row">
+          <div class="col-12 col-sm-12 text-center">
+                <h1>Süreli Kampanyalar</h1>
+              <img style="width: 100%" src="">
+              <h1>0 5 : 3 4 : 5 0</h1>
+              <p>[1 + 1] [Misha] Süper Aqua Ultra Hyalon Krem 70ml</p>
+          </div>
+
+          <div class="col-12 col-sm-12">
+              <img style="width: 100%" src="./img/u1.jpg">
+              <img style="width: 100%" src="./img/u2.jpg">
+              <img style="width: 100%" src="./img/u3.jpg">
+          </div>
+          <div class="col-12 col-sm-12 mt-5">
+              <img style="width: 100%" src="./img/b1.jpg">
+              <div class="row p-5">
+                  <div class="col-2 col-sm-2">
+                      <img style="width: 100%" src="./img/b2.jpg">
+                  </div>
+                  <div class="col-10 col-sm-10">
+                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br><br><br>
+                          <strong>18.000  tl kazancınız</strong></p>
+                  </div>
+              </div>
+              <div class="row p-5">
+                  <div class="col-2 col-sm-2">
+                      <img style="width: 100%" src="./img/b3.jpg">
+                  </div>
+                  <div class="col-10 col-sm-10">
+                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br><br><br>
+                          <strong>12.000  tl kazancınız</strong></p>
+                  </div>
+              </div>
+              <div class="row p-5">
+                  <div class="col-2 col-sm-2">
+                      <img style="width: 100%" src="./img/b4.jpg">
+                  </div>
+                  <div class="col-10 col-sm-10">
+                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br><br><br>
+                          <strong>34.000 tl kazancınız </strong></p>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="col-12 col-sm-12 text-center">
+              <h1>#MISSHA</h1>
+              <div class="row">
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i1.jpg">
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i2.jpg">
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i3.jpg">
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i4.jpg">
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i5.jpg">
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i6.jpg">
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i7.jpg">
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i8.jpg">
+                      <i class="fab fa-facebook fa-4x"></i>
+                      <i class="fab fa-twitter fa-4x"></i>
+                  </div>
+                  <div class="col-4 col-sm-4">
+                      <img style="width: 100%" src="./img/i9.jpg">
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-12 col-sm-12 text-left mt-5" style="border-top: #464646 1px solid">
+              <h3>   <br>Üyelik Şartları ve KoşullarıGizlilik   <br>  <br>
+                  politikasıPC sürümünü görüntüle  Able C & C
+                   <br>
+                  Temsilci Lee Hae-joon  <br>
+                  Adres 13F, Majesta Şehir Kulesi Bir, 12, Seocho-daero 38-gil, Seocho-gu, Seul  <br>
+                  119-81-34685 numaralı Ticari Kayıt  <br>
+                  Posta havalesi rapor numarası 2018-Seul seocho-0297  <br>
+                  Sorular 080-080-4936  <br>
+                  İşletme Bilgi Onayı  <br>
+                  Telif Hakkı (C) ABLEC & C tüm hakları saklıdır.</h3>
+          </div>
+      </div>
+
+
+  </div>
+
+
+
+  </body>
+</html>
+
+
+
+<template id="menu-modal">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-full">
+
+
+            <div class="modal-content modal-content-full text-left" >
+                <div class="modal-header mh-1">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h4 class="modal-title mt-1 col-2 col-sm-2">Missha.com.tr</h4>
+                            <button type="button" class="close ml-auto col-1 col-sm-1" style="color: white" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="row pt-5 text-center">
+                            <div class="col-3 col-sm-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12">
+                                        <i class="fas fa-truck-moving fa-4x c-white "></i>
+                                    </div>
+                                    <div class="col-12 col-sm-12 c-white mfont">
+                                        Kargo
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12">
+                                        <i class="fas fa-cart-arrow-down fa-4x c-white "></i>
+                                    </div>
+                                    <div class="col-12 col-sm-12 c-white mfont">
+                                        Sepetim
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12">
+                                        <i class="far fa-heart fa-4x c-white "></i>
+                                    </div>
+                                    <div class="col-12 col-sm-12 c-white mfont">
+                                        Favorilerim
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12">
+                                        <i class="fas fa-gift fa-4x c-white "></i>
+                                    </div>
+                                    <div class="col-12 col-sm-12 c-white mfont">
+                                        Kampanyalar
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-body">
+
+                    <vue-accordion ref="accordion"></vue-accordion>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+
+<template id="vue-accordion">
+        <div style="width: 100%">
+            <h1>Missha Kategoriler </h1>
+            <div class="accordions mt-5" style="font-size: 35px">
+
+            <div class="row">
+                <div class="col-12 col-sm-12"  v-for="(row, id) in rows" style="border-bottom: #464646 1px solid">
+                    <div v-on:click="row.open = !row.open">
+                        <strong>{{ row.term }}</strong> <span  style="float: right" >
+                        <i v-if="row.open && row.details" class="fas fa-sort-up fa-2x"></i>
+                        <i v-else  class="fas fa-sort-down fa-2x"></i>
+                    </span>
+                    </div>
+                    <div v-if="row.open && row.details" v-for="(rw, id) in row.details ">{{ rw.name }}</div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+</template>
+
+<template id="search-element">
+
+        <div class="col-sm-12 d-none" style="background: #000">
+            <div class="row p-5">
+                <div class="col-sm-11">
+                    <div class="row">
+                        <div class="col-sm-11 pr-0">        <input class="form-control rounded" style="color: #5f5f5f;height: 65px; border-right-color:white" value="Arama Yapacağınız Kelimeyi Giriniz!"></div>
+                        <div class="col-sm-1  pl-0" style="background: white;padding: 8px; border-left-color:white " >     <i aria-hidden="true" class="fas fa-search fa-3x"></i></div>
+                    </div>
+                </div>
+                <div class="col-sm-1 c-white"><i class="fas fa-times fa-4x"></i></div>
+            </div>
+        </div>
+
+
+</template>
+
