@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="./jquery-3.3.1.slim.min.js" ></script>
+      <script src="./popper.min.js" ></script>
 
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="./bootstrap.min.css" >
+      <script src="./bootstrap.min.js" ></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       <link rel="stylesheet" type="text/css" href="./owl.carousel.css">
       <script src="./owl.carousel.js"></script>
@@ -19,19 +19,18 @@
       <script type = "text/javascript">
 
           window.addEventListener("load", function(event) {
-              $('.owl-carousel').owlCarousel({
-                  loop:true,
-                  margin:10,
-                  nav:false,
-                  items:1
-              });
 
-              Vue.component('menu-modal', {
-                  template: '#menu-modal',
-              })
 
               Vue.component('search-element', {
                   template: '#search-element',
+                  data:function () {
+                      return {
+                          styleObject: {
+                              background:'#000',
+                              display:'none'
+                          }
+                      }
+                  }
               })
 
               Vue.component('vue-accordion', {
@@ -111,17 +110,32 @@
                           $(element).modal('show')
                       },
                       displaySearch : function () {
-                          let element = this.$refs.modal.$el
+                          this.$refs.search_elem.styleObject.display = "block";
                       }
                   },
               });
 
 
+              Vue.nextTick(function(){
+                  $('.owl-carousel').owlCarousel({
+                      loop:true,
+                      margin:10,
+                      nav:false,
+                      items:1
+                  });
+
+                  Vue.component('menu-modal', {
+                      template: '#menu-modal',
+                  })
+              }.bind(vm));
 
           });
-          
-          
+
+
       </script>
+
+
+
 
       <style>
           @media only screen and (max-width: 768px) {
@@ -166,6 +180,26 @@
               min-height: 100%;
               border-radius: 0;
           }
+          .modal.left .modal-dialog {
+              position: fixed;
+              margin: auto;
+              width: 320px;
+              height: 100%;
+              -webkit-transform: translate3d(0%, 0, 0);
+              -ms-transform: translate3d(0%, 0, 0);
+              -o-transform: translate3d(0%, 0, 0);
+              transform: translate3d(0%, 0, 0);
+          }
+          .modal.left.fade .modal-dialog {
+              left: -320px;
+              -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+              -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+              -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+              transition: opacity 0.3s linear, left 0.3s ease-out;
+          }
+          .modal.left.fade.show .modal-dialog {
+              left: 0;
+          }
 
       </style>
 
@@ -189,6 +223,7 @@
               font-size: 30px;
           }
       </style>
+
 
   </head>
   <body>
@@ -236,7 +271,6 @@
           </div>
 
       </div>
-
       <div class="row">
           <div class="col-12 col-sm-12">
               <div class="owl-carousel owl-theme">
@@ -249,6 +283,7 @@
               </div>
           </div>
       </div>
+
       <div class="row">
           <div class="col-12 col-sm-12 text-center">
               <h1>Yeni Ürünler&Çok Satanlar</h1>
@@ -323,33 +358,33 @@
               <h1>#MISSHA</h1>
               <div class="row">
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i1.jpg">
+                      <img style="width: 100%" src="./img/instabot/1.png">
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i2.jpg">
+                      <img style="width: 100%" src="./img/instabot/2.png">
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i3.jpg">
+                      <img style="width: 100%" src="./img/instabot/3.png">
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i4.jpg">
+                      <img style="width: 100%" src="./img/instabot/4.png">
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i5.jpg">
+                      <img style="width: 100%" src="./img/instabot/5.png">
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i6.jpg">
+                      <img style="width: 100%" src="./img/instabot/6.png">
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i7.jpg">
+                      <img style="width: 100%" src="./img/instabot/7.png">
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i8.jpg">
+                      <img style="width: 100%" src="./img/instabot/8.png">
                       <i class="fab fa-facebook fa-4x"></i>
                       <i class="fab fa-twitter fa-4x"></i>
                   </div>
                   <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/i9.jpg">
+                      <img style="width: 100%" src="./img/instabot/9.png">
                   </div>
               </div>
           </div>
@@ -379,7 +414,7 @@
 
 
 <template id="menu-modal">
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal left fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-full">
 
 
@@ -473,15 +508,15 @@
 
 <template id="search-element">
 
-        <div class="col-sm-12 d-none" style="background: #000">
+        <div class="col-sm-12" v-bind:style="styleObject">
             <div class="row p-5">
                 <div class="col-sm-11">
                     <div class="row">
-                        <div class="col-sm-11 pr-0">        <input class="form-control rounded" style="color: #5f5f5f;height: 65px; border-right-color:white" value="Arama Yapacağınız Kelimeyi Giriniz!"></div>
-                        <div class="col-sm-1  pl-0" style="background: white;padding: 8px; border-left-color:white " >     <i aria-hidden="true" class="fas fa-search fa-3x"></i></div>
+                        <div class="col-sm-11 pr-0"><input class="form-control rounded" style="font-size: 35px;color: #5f5f5f;height: 65px; border-right-color:white" value="Arama Yapacağınız Kelimeyi Giriniz!"></div>
+                        <div class="col-sm-1  pl-0" style="background: white;padding: 8px; border-left-color:white " >     <i aria-hidden="true" style="margin-left: 9px;" class="fas fa-search fa-3x"></i></div>
                     </div>
                 </div>
-                <div class="col-sm-1 c-white"><i class="fas fa-times fa-4x"></i></div>
+                <div class="col-sm-1 c-white" v-on:click="styleObject.display='none'"><i class="fas fa-times fa-4x"></i></div>
             </div>
         </div>
 
