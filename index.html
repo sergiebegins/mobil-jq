@@ -32,6 +32,17 @@
                       }
                   }
               })
+              Vue.component('insta-element', {
+                  template: '#insta-element',
+                  data:function () {
+                      return {
+                          styleObject: {
+                              background:'#000',
+                              display:'none'
+                          }
+                      }
+                  }
+              })
 
               Vue.component('vue-accordion', {
                   data: function () {
@@ -354,40 +365,7 @@
           </div>
 
 
-          <div class="col-12 col-sm-12 text-center">
-              <h1>#MISSHA</h1>
-              <div class="row">
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/1.png">
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/2.png">
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/3.png">
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/4.png">
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/5.png">
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/6.png">
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/7.png">
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/8.png">
-                      <i class="fab fa-facebook fa-4x"></i>
-                      <i class="fab fa-twitter fa-4x"></i>
-                  </div>
-                  <div class="col-4 col-sm-4">
-                      <img style="width: 100%" src="./img/instabot/9.png">
-                  </div>
-              </div>
-          </div>
+      <insta-element ref="insta-elem"></insta-element>
 
           <div class="col-12 col-sm-12 text-left mt-5" style="border-top: #464646 1px solid">
               <h3>   <br>Üyelik Şartları ve KoşullarıGizlilik   <br>  <br>
@@ -523,3 +501,42 @@
 
 </template>
 
+<template id="insta-element">
+    <div>
+        <div class="col-12 col-sm-12 text-center">
+            <h1>#MISSHA</h1>
+            <div class="row">
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/1.png"></a>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/2.png"></a>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/3.png"></a>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/4.png"></a>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/5.png"></a>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/6.png"></a>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/7.png"></a>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/8.png"></a>
+                    <i class="fab fa-facebook fa-4x"></i>
+                    <i class="fab fa-twitter fa-4x"></i>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <a href=""><img style="width: 100%" src="./img/instabot/9.png"></a>
+                </div>
+            </div>
+        </div>
+        <div v-for="data in myJson">{{data}}</div>
+    </div>
+</template>
