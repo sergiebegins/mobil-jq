@@ -1,0 +1,41 @@
+
+@media screen and (max-width: 599px) and (min-width: 320px){
+    .nav-link{font-size: 20px}
+    .fi-s{
+        font-size: 30px;
+        padding: 0px;
+    }
+    .fi-h{
+        padding-top: 0px;
+        font-size: 35px;
+    }
+    .mfont{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 599px){
+    .nav-link{font-size: 20px}
+    .fi-s{
+        font-size: 30px;
+        padding: 0px;
+    }
+    .fi-h{
+        padding-top: 16px;
+        font-size: 60px;
+    }
+    .mfont{
+        font-size: 18px;
+    }
+}
+/*col*/
+@media only screen and (max-width: 768px) {
+
+}
+/*sm*/
+@media only screen and (max-width: 992px) {
+
+}
+/*md*/
+@media only screen and (max-width: 1200px) {
+
+}

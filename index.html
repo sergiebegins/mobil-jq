@@ -1,255 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
+      <meta charset="utf-8">
+      <title>Mobil</title>
+
+        <!--      kütüphaneler   js    -->
       <script src="./jquery-3.3.1.slim.min.js" ></script>
       <script src="./popper.min.js" ></script>
-
-      <link rel="stylesheet" href="./bootstrap.min.css" >
       <script src="./bootstrap.min.js" ></script>
-      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-      <link rel="stylesheet" type="text/css" href="./owl.carousel.css">
-      <script src="./owl.carousel.js"></script>
-      <script src="./vue.js"></script>
+      <script src="./axios.min.js"></script>
+      <script defer src="./friconix.js"></script>
+      <script src="js/plugin/owlcarousel/owl.carousel.min.js"></script>
+      <!--      kütüphaneler   css   -->
+      <link rel="stylesheet" href="js/plugin/owlcarousel/owl.carousel.min.css">
+      <link rel="stylesheet" href="js/plugin/owlcarousel/owl.theme.default.min.css">
+      <link rel="stylesheet" href="./bootstrap.min.css" >
+      <link href="assets/css/fontawesome/all.min.css" rel="stylesheet"  >
+      <link href="assets/css/fontawesome/fontawesome.min.css" rel="stylesheet" >
+      <link href="assets/css/fontawesome/brands.min.css" rel="stylesheet"  >
+      <link href="assets/css/fontawesome/duotone.min.css" rel="stylesheet"  >
+      <link href="assets/css/fontawesome/light.min.css" rel="stylesheet"  >
+      <link href="assets/css/fontawesome/regular.min.css" rel="stylesheet"  >
+      <link href="assets/css/fontawesome/solid.min.css" rel="stylesheet"  >
+      <link href="assets/css/fontawesome/svg-with-js.css" rel="stylesheet"  >
+      <link href="assets/css/fontawesome/v4-shims.css" rel="stylesheet"  >
+            <!--        modeller        -->
+      <script src="./js/jq_model/helper_m.js"></script>
+        <!--        controllerlar-eventler         -->
+      <script src="./js/jq_controller/controller.js"></script>
 
+        <!--        pluginler            -->
+      <script src="./js/jq_plugin/owl.js"></script>
 
-      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <title>Mobil</title>
+        <!--         cssler     -->
 
-      <script type = "text/javascript">
+      <link href="assets/css/main.css" rel="stylesheet"  >
+      <link href="assets/css/mobil.css" rel="stylesheet"  >
 
-          window.addEventListener("load", function(event) {
-
-
-              Vue.component('search-element', {
-                  template: '#search-element',
-                  data:function () {
-                      return {
-                          styleObject: {
-                              background:'#000',
-                              display:'none'
-                          }
-                      }
-                  }
-              })
-              Vue.component('insta-element', {
-                  template: '#insta-element',
-                  data:function () {
-                      return {
-                          styleObject: {
-                              background:'#000',
-                              display:'none'
-                          }
-                      }
-                  }
-              })
-
-              Vue.component('vue-accordion', {
-                  data: function () {
-                      return {
-                          rows: {
-                              q1: {
-                                  term: 'BB Kremler',
-                                  open: false
-                              },
-                              q2: {
-                                  term: 'Cilt Bakımı',
-                                  details: {
-                                      k1:{
-                                        name:'super Aqua'
-                                      },
-                                      k2:{
-                                          name:'Time Revulation'
-                                      }
-                                  },
-                                  open: false
-                              },
-                              q3: {
-                                  term: 'Vücut Bakımı',
-                                  details: {
-                                      k1:{
-                                          name:'super Aqua'
-                                      },
-                                      k2:{
-                                          name:'Time Revulation'
-                                      }
-                                  },
-                                  open: false
-                              }
-                              ,
-                              q4: {
-                                  term: 'BB Kremler',
-                                  open: false
-                              },
-                              q5: {
-                                  term: 'Cilt Bakımı',
-                                  details: {
-                                      k1:{
-                                          name:'super Aqua'
-                                      },
-                                      k2:{
-                                          name:'Time Revulation'
-                                      }
-                                  },
-                                  open: false
-                              },
-                              q6: {
-                                  term: 'Vücut Bakımı',
-                                  details: {
-                                      k1:{
-                                          name:'super Aqua'
-                                      },
-                                      k2:{
-                                          name:'Time Revulation'
-                                      }
-                                  },
-                                  open: false
-                              }
-                          }
-                      }
-                  },template: '#vue-accordion',
-              })
-
-              var vm = new Vue({
-                  el: '#app',
-                  data: {
-                      showMenu: 1
-                  },
-                  methods : {
-                      displayMenu : function() {
-                          let element = this.$refs.modal.$el
-                          $(element).modal('show')
-                      },
-                      displaySearch : function () {
-                          this.$refs.search_elem.styleObject.display = "block";
-                      }
-                  },
-              });
-
-
-              Vue.nextTick(function(){
-                  $('.owl-carousel').owlCarousel({
-                      loop:true,
-                      margin:10,
-                      nav:false,
-                      items:1
-                  });
-
-                  Vue.component('menu-modal', {
-                      template: '#menu-modal',
-                  })
-              }.bind(vm));
-
-          });
-
-
-      </script>
-
-
-
-
-      <style>
-          @media only screen and (max-width: 768px) {
-              .nav-link{font-size: 40px}
-          }
-          @media only screen and (max-width: 992px) {
-
-          }@media only screen and (max-width: 1200px) {
-
-          }
-          .nav-link{font-size: 50px}
-
-
-          .nav
-          {
-              width: 100%;
-              height: 102px;
-              display: -moz-inline-box;
-              display: -webkit-inline-box;
-              overflow-x: auto;
-
-          }
-          .nav li
-          {
-              width: 300px;
-              flex-shrink: 0;
-              height: 100px;
-
-          }
-          .nav-link{
-              color: #464646;
-          }
-
-          .modal-full {
-              min-width: 100%;
-              margin: 0;
-              min-height: 100%;
-              height: 100%;
-          }
-          .modal-content-full {
-              height: 100%;
-              min-height: 100%;
-              border-radius: 0;
-          }
-          .modal.left .modal-dialog {
-              position: fixed;
-              margin: auto;
-              width: 320px;
-              height: 100%;
-              -webkit-transform: translate3d(0%, 0, 0);
-              -ms-transform: translate3d(0%, 0, 0);
-              -o-transform: translate3d(0%, 0, 0);
-              transform: translate3d(0%, 0, 0);
-          }
-          .modal.left.fade .modal-dialog {
-              left: -320px;
-              -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
-              -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
-              -o-transition: opacity 0.3s linear, left 0.3s ease-out;
-              transition: opacity 0.3s linear, left 0.3s ease-out;
-          }
-          .modal.left.fade.show .modal-dialog {
-              left: 0;
-          }
-
-      </style>
-
-      <style>
-          .mh-1{
-          background: rgb(102, 102, 102);
-          }
-          .mt-1{
-              color: #fff;
-              font-size: 50px;
-
-          }
-          .close{
-              font-size: 50px;
-              opacity: 1;
-          }
-          .c-white{
-              color: #ffffff;
-          }
-          .mfont{
-              font-size: 30px;
-          }
-      </style>
-
-
+<script>
+    $(document).ready(function () {
+        $('#demo').html(screen.width+'-'+screen.height);
+    })
+</script>
   </head>
   <body>
 
 
-  <div id="app" class="container-fluid">
 
-          <div class="row mt-5" id="menuDetails" style="border-bottom: 1px solid #464646;height: 150px">
-              <div class="col-2 col-sm-2 text-right ml-auto" v-on:click = "displayMenu" ><i class="fas fa-bars fa-5x"></i><menu-modal ref="modal"></menu-modal></div>
-              <div class="col-8 col-sm-8 text-center" ><img style="height: 90px" src="./logo.png"></div>
-              <div class="col-2 col-sm-2 text-left mr-auto" v-on:click = "displaySearch"><i class="fas fa-search fa-5x"></i></div>
+
+  <div id="app" class="container-fluid">
+      <div id="demo"></div>
+
+          <div class="row mt-5" id="menuDetails" style="border-bottom: 1px solid #464646;">
+              <div class="col-2 col-sm-2 text-right ml-auto" id="hamMenu"  ><i class="fi-xnluxl-three-bars fi-h fi"></i></div>
+              <div class="col-8 col-sm-8 text-center" ><img style="width: 100%;" src="./logo.png"></div>
+              <div class="col-2 col-sm-2 text-left mr-auto" id="searchMenu" ><i class="fi-xtluhl-magnifying-glass-thin fi-h fi"></i></div>
           </div>
 
       <div class="row mt-3">
-            <search-element ref="search_elem"></search-element>
+          <div class="col-12 col-sm-12 d-none"  id="searchBlock" >
+              <div class="row p-4" style="background: #464646">
+                  <div class="col-11 col-sm-11">
+                      <div class="row">
+                          <div class="col-11 col-sm-11 p-0 " ><input style="border-right: none;border-radius: 0px !important;" class="form-control"  value="Arama Yapacağınız Kelimeyi Giriniz!"></div>
+                          <div class="col-1 col-sm-1  p-0 form-control" style="border-left: none;border-radius: 0;" >
+                              <i  class="fi-xtluhl-magnifying-glass-thin fi-s " style="display: inline-grid;"></i>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-1 col-1 " style="color: #f7f7f7" id="closeSearchItem" ><i class="fi-stluxl-times-solid fi-s"></i></div>
+              </div>
+          </div>
 
           <div class="col-12 col-sm-12">
               <ul class="nav">
@@ -259,7 +81,7 @@
                   <li class="nav-item">
                       <a class="nav-link" href="#">Cilt Bakımı</a>
                   </li>
-                  <li class="nav-item" style="width: 350px;">
+                  <li class="nav-item" >
                       <a class="nav-link"  href="#">Vicud Bakımı</a>
                   </li>
                   <li class="nav-item">
@@ -274,7 +96,7 @@
                   <li class="nav-item">
                       <a class="nav-link" href="#">Aksesuarlar</a>
                   </li>
-                  <li class="nav-item" style="width: 480px;">
+                  <li class="nav-item" >
                       <a class="nav-link"  href="#">Güneş Koruyucuları</a>
                   </li>
               </ul>
@@ -285,13 +107,14 @@
       <div class="row">
           <div class="col-12 col-sm-12">
               <div class="owl-carousel owl-theme">
-                  <div class="item"><img src="./img/1.jpg"></div>
-                  <div class="item"><img src="./img/2.jpg"></div>
-                  <div class="item"><img src="./img/3.jpg"></div>
-                  <div class="item"><img src="./img/4.jpg"></div>
-                  <div class="item"><img src="./img/5.jpg"></div>
-                  <div class="item"><img src="./img/6.jpg"></div>
+                  <div class="item"><img class="owl-lazy" data-src="./img/1.jpg"></div>
+                  <div class="item"><img class="owl-lazy" data-src="./img/2.jpg"></div>
+                  <div class="item"><img class="owl-lazy" data-src="./img/3.jpg"></div>
+                  <div class="item"><img class="owl-lazy" data-src="./img/4.jpg"></div>
+                  <div class="item"><img class="owl-lazy" data-src="./img/5.jpg"></div>
+                  <div class="item"><img class="owl-lazy" data-src="./img/6.jpg"></div>
               </div>
+
           </div>
       </div>
 
@@ -301,21 +124,21 @@
           </div>
           <div class="col-6 col-sm-6">
               <img style="width: 100%" src="./img/n1.jpg">
-              <h2>Black Friday Kampanya</h2>
+              <h5>Black Friday Kampanya</h5>
           </div>
           <div class="col-6 col-sm-6">
               <img style="width: 100%" src="./img/n2.jpg">
-              <h2>Yeni trend rengi</h2>
+              <h5>Yeni trend rengi</h5>
           </div>
 
           <div class="col-6 col-sm-6">
               <img style="width: 100%" src="./img/n3.jpg">
-              <h2>hassas cilt</h2>
+              <h5>hassas cilt</h5>
           </div>
 
           <div class="col-6 col-sm-6">
               <img style="width: 100%" src="./img/n4.jpg">
-              <h2>kızdırma kapağı</h2>
+              <h5>kızdırma kapağı</h5>
           </div>
 
       </div>
@@ -335,49 +158,67 @@
           </div>
           <div class="col-12 col-sm-12 mt-5">
               <img style="width: 100%" src="./img/b1.jpg">
-              <div class="row p-5">
-                  <div class="col-2 col-sm-2">
+              <div class="row p-1">
+                  <div class="col-4 col-sm-4">
                       <img style="width: 100%" src="./img/b2.jpg">
                   </div>
-                  <div class="col-10 col-sm-10">
-                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br><br><br>
+                  <div class="col-8 col-sm-8">
+                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br>
                           <strong>18.000  tl kazancınız</strong></p>
                   </div>
-              </div>
-              <div class="row p-5">
-                  <div class="col-2 col-sm-2">
+                  <div class="col-4 col-sm-4">
                       <img style="width: 100%" src="./img/b3.jpg">
                   </div>
-                  <div class="col-10 col-sm-10">
-                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br><br><br>
+                  <div class="col-8 col-sm-8">
+                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br>
                           <strong>12.000  tl kazancınız</strong></p>
                   </div>
-              </div>
-              <div class="row p-5">
-                  <div class="col-2 col-sm-2">
+                  <div class="col-4 col-sm-4">
                       <img style="width: 100%" src="./img/b4.jpg">
                   </div>
-                  <div class="col-10 col-sm-10">
-                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br><br><br>
+                  <div class="col-8 col-sm-8">
+                      <p>[1 + 1] [Misha] Kızdırma Cilt Balsamı 50ml<br>
                           <strong>34.000 tl kazancınız </strong></p>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <div class="col-12 col-sm-12 text-center">
+              <h1>#MISSHA</h1>
+              <div class="row"  >
+                  <div class="col-4 col-sm-4" >
+                      <a href=""><img style="width: 100%" ></a>
                   </div>
               </div>
           </div>
 
-
-      <insta-element ref="insta-elem"></insta-element>
-
           <div class="col-12 col-sm-12 text-left mt-5" style="border-top: #464646 1px solid">
-              <h3>   <br>Üyelik Şartları ve KoşullarıGizlilik   <br>  <br>
-                  politikasıPC sürümünü görüntüle  Able C & C
-                   <br>
-                  Temsilci Lee Hae-joon  <br>
-                  Adres 13F, Majesta Şehir Kulesi Bir, 12, Seocho-daero 38-gil, Seocho-gu, Seul  <br>
-                  119-81-34685 numaralı Ticari Kayıt  <br>
-                  Posta havalesi rapor numarası 2018-Seul seocho-0297  <br>
-                  Sorular 080-080-4936  <br>
-                  İşletme Bilgi Onayı  <br>
-                  Telif Hakkı (C) ABLEC & C tüm hakları saklıdır.</h3>
+            <ul style="width: 50%;float: left ">
+                <li>Kurumsal</li>
+                <li>Hakkımızda</li>
+                <li>Güvenli Alışveriş</li>
+                <li>Franchising</li>
+                <li>Banka Hesap Numaralarımız</li>
+
+            </ul>
+              <ul style="width: 50%;float: left">
+                  <li>Mağazalarımız</li>
+                  <li>Üyelik ve Alışveriş</li>
+                  <li>Kullanım Şartları</li>
+                  <li>Sipariş ve Teslimat</li>
+                  <li>İptal ve İade Koşulları</li>
+                  <li>Sıkça Sorulan Sorular</li>
+              </ul>
+              <p>
+                  Missha Türkiye<br>
+                  Adres : Batısitesi mah. 2308. Sokak No:12 Gersan / Batıkent /ANKARA<br>
+                  Tel: 0(312) 440 2445 | iletisim@missha.com.tr<br>
+                  Çalışma Saatleri: Pazartesi - Cumartesi 09:00 - 18:00
+              </p>
+
+
           </div>
       </div>
 
@@ -391,8 +232,8 @@
 
 
 
-<template id="menu-modal">
-    <div class="modal left fade" id="myModal" role="dialog">
+
+    <div class="modal left fade" id="myModalMenu" role="dialog">
         <div class="modal-dialog modal-full">
 
 
@@ -400,14 +241,14 @@
                 <div class="modal-header mh-1">
                     <div class="container-fluid">
                         <div class="row">
-                            <h4 class="modal-title mt-1 col-2 col-sm-2">Missha.com.tr</h4>
+                            <div class="modal-title mt-1 col-2  mfont">Missha.com.tr</div>
                             <button type="button" class="close ml-auto col-1 col-sm-1" style="color: white" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="row pt-5 text-center">
                             <div class="col-3 col-sm-3">
                                 <div class="row">
                                     <div class="col-12 col-sm-12">
-                                        <i class="fas fa-truck-moving fa-4x c-white "></i>
+                                        <i class="fi-onluxl-dune-buggy-solid fi-s c-white"></i>
                                     </div>
                                     <div class="col-12 col-sm-12 c-white mfont">
                                         Kargo
@@ -417,7 +258,7 @@
                             <div class="col-3 col-sm-3">
                                 <div class="row">
                                     <div class="col-12 col-sm-12">
-                                        <i class="fas fa-cart-arrow-down fa-4x c-white "></i>
+                                        <i class="fi-onluxl-bus-side fi-s c-white"></i>
                                     </div>
                                     <div class="col-12 col-sm-12 c-white mfont">
                                         Sepetim
@@ -427,7 +268,7 @@
                             <div class="col-3 col-sm-3">
                                 <div class="row">
                                     <div class="col-12 col-sm-12">
-                                        <i class="far fa-heart fa-4x c-white "></i>
+                                        <i class="fi-xtluxl-heart-thin fi-s c-white"></i>
                                     </div>
                                     <div class="col-12 col-sm-12 c-white mfont">
                                         Favorilerim
@@ -437,7 +278,7 @@
                             <div class="col-3 col-sm-3">
                                 <div class="row">
                                     <div class="col-12 col-sm-12">
-                                        <i class="fas fa-gift fa-4x c-white "></i>
+                                        <i class="fi-xtpuxl-label-solid fi-s c-white"></i>
                                     </div>
                                     <div class="col-12 col-sm-12 c-white mfont">
                                         Kampanyalar
@@ -450,7 +291,116 @@
                 </div>
                 <div class="modal-body">
 
-                    <vue-accordion ref="accordion"></vue-accordion>
+                    <div style="width: 100%">
+                        <div>Missha Kategoriler </div>
+                        <div class="accordions mt-5" style="font-size: 35px">
+
+                            <div class="row">
+                                <div class="col-12 col-sm-12"   style="border-bottom: #464646 1px solid">
+
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" >
+                                                <div class="mb-0 mfont">
+                                                        Collapsible Group Item #1
+                                                </div>
+                                            </div>
+
+                                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    <ul>
+
+                                                        <li><a href="#">Connect</a></li>
+
+                                                        <li><a href="#">Profiles</a></li>
+
+                                                        <li><a href="#">Options</a></li>
+
+                                                        <li><a href="#">Connect</a></li>
+
+                                                        <li><a href="#">Profiles</a></li>
+
+                                                        <li><a href="#">Options</a></li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <div class="mb-0 mfont" data-toggle="collapse" data-target="#collapseTwo" >
+                                                        Collapsible Group Item #2
+                                                </div>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    <ul>
+
+                                                        <li><a href="#">Connect</a></li>
+
+                                                        <li><a href="#">Profiles</a></li>
+
+                                                        <li><a href="#">Options</a></li>
+
+                                                        <li><a href="#">Connect</a></li>
+
+                                                        <li><a href="#">Profiles</a></li>
+
+                                                        <li><a href="#">Options</a></li>
+
+                                                    </ul>
+                                               </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree">
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-12">
+                                                        <div class="mfont">
+                                                            <p style="float: left">Collapsible Group Item #3</p>
+                                                            <span style="float: right">
+                                                            <i  class="fi-xnldxl-sort-up "></i>
+                                                             </span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    <ul>
+
+                                                        <li><a href="#">Connect</a></li>
+
+                                                        <li><a href="#">Profiles</a></li>
+
+                                                        <li><a href="#">Options</a></li>
+
+                                                        <li><a href="#">Connect</a></li>
+
+                                                        <li><a href="#">Profiles</a></li>
+
+                                                        <li><a href="#">Options</a></li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+<!--                                    <div >-->
+<!--                                        <strong></strong> <span  style="float: right" >-->
+<!--                        <i  class="fas fa-sort-up fa-2x"></i>-->
+<!--                        <i  class="fas fa-sort-down fa-2x"></i>-->
+<!--                    </span>-->
+<!--                                    </div>-->
+                                    <div ></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
@@ -460,83 +410,7 @@
 
         </div>
     </div>
-</template>
 
 
-<template id="vue-accordion">
-        <div style="width: 100%">
-            <h1>Missha Kategoriler </h1>
-            <div class="accordions mt-5" style="font-size: 35px">
-
-            <div class="row">
-                <div class="col-12 col-sm-12"  v-for="(row, id) in rows" style="border-bottom: #464646 1px solid">
-                    <div v-on:click="row.open = !row.open">
-                        <strong>{{ row.term }}</strong> <span  style="float: right" >
-                        <i v-if="row.open && row.details" class="fas fa-sort-up fa-2x"></i>
-                        <i v-else  class="fas fa-sort-down fa-2x"></i>
-                    </span>
-                    </div>
-                    <div v-if="row.open && row.details" v-for="(rw, id) in row.details ">{{ rw.name }}</div>
-                </div>
-            </div>
-
-            </div>
-        </div>
-</template>
-
-<template id="search-element">
-
-        <div class="col-sm-12" v-bind:style="styleObject">
-            <div class="row p-5">
-                <div class="col-sm-11">
-                    <div class="row">
-                        <div class="col-sm-11 pr-0"><input class="form-control rounded" style="font-size: 35px;color: #5f5f5f;height: 65px; border-right-color:white" value="Arama Yapacağınız Kelimeyi Giriniz!"></div>
-                        <div class="col-sm-1  pl-0" style="background: white;padding: 8px; border-left-color:white " >     <i aria-hidden="true" style="margin-left: 9px;" class="fas fa-search fa-3x"></i></div>
-                    </div>
-                </div>
-                <div class="col-sm-1 c-white" v-on:click="styleObject.display='none'"><i class="fas fa-times fa-4x"></i></div>
-            </div>
-        </div>
 
 
-</template>
-
-<template id="insta-element">
-    <div>
-        <div class="col-12 col-sm-12 text-center">
-            <h1>#MISSHA</h1>
-            <div class="row">
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/1.png"></a>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/2.png"></a>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/3.png"></a>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/4.png"></a>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/5.png"></a>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/6.png"></a>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/7.png"></a>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/8.png"></a>
-                    <i class="fab fa-facebook fa-4x"></i>
-                    <i class="fab fa-twitter fa-4x"></i>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <a href=""><img style="width: 100%" src="./img/instabot/9.png"></a>
-                </div>
-            </div>
-        </div>
-        <div v-for="data in myJson">{{data}}</div>
-    </div>
-</template>
